@@ -3,6 +3,18 @@
  * Date: March 20
  * Description: This program simulates a text version of the popular game show, Are You Smarter Than A 5th Grader. 
  * Bonus Features: Colour, Timer?, Lifeline, To-DO: maybe write to file later
+ * 
+ * 
+- CHALLENGE FEATURE — Timer: wait before displaying text before clear screen?
+- CHALLENGE FEATURE — Lifeline: peek, copy, save? (part of original game)
+- CHALLENGE FEATURE — Colourful Text:
+    - How code run? VSC? Terminal? — colour ANSI?
+    - “interface more user friendly or engaging” — headings work?
+- Variable declaration
+- Methods
+- How many question choices?
+- RUBRIC — Code Format: autoformat?
+- RUBRIC — Is whitespace good?
  */
 
 // import java.io.PrintWriter;
@@ -55,7 +67,7 @@ public class GameShow {
 
     // Method for header text
     public static void printHeader(String s) {
-        System.out.println("-".repeat(100) + "\n" + s + "\n" + "-".repeat(100));
+        System.out.println("-".repeat(125) + "\n" + s + "\n" + "-".repeat(125));
     }
 
     // Method for main menu
@@ -120,6 +132,7 @@ public class GameShow {
     public static void game() {
         // Variable declaration
         int[] moneyEarnings = { 0, 1000, 2000, 5000, 10000, 25000, 50000, 100000, 175000, 300000, 500000, 1000000 };
+        // TMP 1
         String[][][] questions = {
                 { { "g1qp1", "g1ap1", "g1cp1" }, { "g1q2p1", "g1a2p1", "g1c2p1" } }, // Grade 1 p1
                 { { "g1qp2", "g1ap2", "g1cp2" }, { "g1q2p2", "g1a2p2", "g1c2p2" } }, // Grade 1 p2
@@ -148,6 +161,8 @@ public class GameShow {
         String a;
         String classmateAnswer;
 
+        // TMP 1
+
         while (gameScreen && alive && qNum <= 10) {
             randQNum = (int) (qRange * Math.random());
             q = questions[qNum - 1][randQNum][0];
@@ -163,7 +178,7 @@ public class GameShow {
                     try {
                         response = readInput();
                     } catch (Exception e) {
-                        System.out.println("Returning to main screen...");
+                        System.out.println("\nReturning to main screen...");
                         gameScreen = false;
                         break;
                     }
@@ -230,48 +245,53 @@ public class GameShow {
         }
 
         if (gameScreen) {
+            // TMP 1
             if (!alive) {
                 if (dropOut) {
                     clearScreen();
-                    printHeader("Drop Out");
+                    printHeader("\u001b[31mDrop out\u001b[37m");
                     System.out.println("You dropped out of school... winning $" + moneyEarnings[qNum] + "!");
+                    // TMP 1
                 } else {
                     clearScreen();
-                    printHeader("Failure");
+                    printHeader("\u001b[31mFailure\u001b[37m");
                     System.out.print("You failed school...");
                     if (qNum < 5)
                         System.out.println(" losing all hard-earned money.");
-                    else
+                    else {
                         System.out.println("but you still win $25,000 for getting this far!");
+                        // TMP 1
+                    }
                 }
                 wait(4000);
             } else {
-                printHeader("Winner");
+                printHeader("GAME");
                 System.out.println("You passed! Time for the final question...");
                 randQNum = (int) (qRange * Math.random());
                 q = questions[10][randQNum][0];
                 a = questions[10][randQNum][1];
+                wait(1000);
                 clearScreen();
                 printHeader("\u001b[34mGAME\u001b[37m");
                 printHeader("\u001b[33mFINAL QUESTION " + "\u001b[37m\n\n" + q);
                 try {
                     response = readInput();
                     if (response.equalsIgnoreCase(a)) {
-                        System.out.println(
-                                "\nAND WE HAVE A WINNER!!! You win the grand prize of $1,000,000 to take home!");
+                        printHeader("\nAND WE HAVE A WINNER!!! You win the grand prize of $1,000,000 to take home!");
+                        // TMP 1
                     } else {
-                        System.out.println("\nUnlucky. The correct answer was " + a
-                                + ". But you still win $25,000 for getting this far!");
+                        printHeader("\nUnlucky. The correct answer was " + a + ". But you still win $25,000 for getting this far!");
+                        // TMP 1
                     }
                     wait(4000);
                 } catch (Exception e) {
-                    System.out.println("Returning to main screen...");
+                    System.out.println("\nReturning to main screen...");
                     gameScreen = false;
                 }
             }
-
+            
             while (gameScreen) {
-                System.out.println("\nLook at the camera and answer: are you smarter than a 5th grader?\n");
+                printHeader("\nLook at the camera and answer: are you smarter than a 5th grader?\n");
                 try {
                     response = readInput();
 
@@ -295,10 +315,13 @@ public class GameShow {
                     gameScreen = false;
                 }
             }
+
+            // TMP-1
+
             System.out.println("\nReturning to the main menu...");
             gameScreen = false;
             wait(1000);
-        }
+        }        
     }
 
     public static void main(String[] args) {

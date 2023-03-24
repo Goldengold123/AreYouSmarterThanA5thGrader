@@ -1,0 +1,20 @@
+int money = 0;
+Calendar start, end;
+long time;
+double wage;
+
+start = Calendar.getInstance();
+
+money = moneyEarnings[qNum];
+
+money = 25000;
+
+money = 1000000;
+
+money = 25000;
+
+end = Calendar.getInstance();
+
+time = (end.getTime().getTime() - start.getTime().getTime()) / 1000;
+wage = Math.round(100.0*time/money) / 100.0;
+System.out.println("Your total in-game time was " + time + " seconds and you earned $" + money + ", so your wage was $" + wage + "/second.");
