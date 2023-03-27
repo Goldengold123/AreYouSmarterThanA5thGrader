@@ -7,12 +7,8 @@
  * 
 - CHALLENGE FEATURE — Timer: wait before displaying text before clear screen?
 - CHALLENGE FEATURE — Lifeline: peek, copy, save? (part of original game)
-- CHALLENGE FEATURE — Colourful Text:
-    - How code run? VSC? Terminal? — colour ANSI?
-    - “interface more user friendly or engaging” — headings work?
-- Variable declaration
-- Methods
-- How many question choices?
+- CHALLENGE FEATURE — Colourful Text: “interface more user friendly or engaging” — headings work?
+- How many question choices? 3?
 - RUBRIC — Code Format: autoformat?
 - RUBRIC — Is whitespace good?
  */
@@ -48,7 +44,8 @@ public class GameShow {
     // Method for quitting: display message then quit.
     public static void quitProgram() {
         printHeader("Exiting...");
-        wait(1000);
+        in.close();
+        wait(500);
         System.exit(0);
     }
 
@@ -134,12 +131,12 @@ public class GameShow {
         int[] moneyEarnings = { 0, 1000, 2000, 5000, 10000, 25000, 50000, 100000, 175000, 300000, 500000, 1000000 };
         // TMP 1
         String[][][] questions = {
-                { { "g1qp1", "g1ap1", "g1cp1" }, { "g1q2p1", "g1a2p1", "g1c2p1" } }, // Grade 1 p1
-                { { "g1qp2", "g1ap2", "g1cp2" }, { "g1q2p2", "g1a2p2", "g1c2p2" } }, // Grade 1 p2
-                { { "g2qp1", "g2ap1", "g2cp1" }, { "g2q2p1", "g2a2p1", "g2c2p1" } }, // Grade 2 p1
-                { { "g2qp2", "g2ap2", "g2cp2" }, { "g2q2p2", "g2a2p2", "g2c2p2" } }, // Grade 2 p2
-                { { "g3qp1", "g3ap1", "g3ap1" }, { "g3q2p1", "g3a2p1", "g3a2p1" } }, // Grade 3 p1
-                { { "g3qp2", "g3ap2", "g3ap2" }, { "g3q2p2", "g3a2p2", "g3a2p2" } }, // Grade 3 p2
+                { { "How many oceans are there?", "5", "5" }, { "How many continents are there?", "7", "7" }, { "What is the largest country in the world?", "russia", "canada" } }, // Grade 1 p1
+                { { "How many sides are on a nonagon?", "9", "9" }, { "How often is a leap year (ignore exceptions)? Once every _ years.", "4", "4" }, { "Fill the blank with the correct homonym: I have a ____ of socks.", "pair", "pear" } }, // Grade 1 p2
+                { { "Spell correctly: what is an object that protects the user against rain by holding a central pole?", "umbrella", "umbrella" }, { "What is the furthest planet from the sun in our solar system?", "neptune", "neptune" },  { "What is the second longest river in North America: the _______ river. ", "mississippi", "misisipi" } }, // Grade 2 p1
+                { { "Which continent has the least amount of humans living there?", "antarctica", "antarctica" }, { "What galaxy is the Earth in (hint: answer is 2 words)?", "milky way", "milky way" }, { "What is the largest mammal (hint: answer is 2 words)?", "blue whale", "green whale" } }, // Grade 2 p2
+                { { "What is the antonym of antonym?", "synonym", "synonym" }, { "The equator is an imaginary line that divides the Earth into a northern hemisphere and a southern hemisphere. What is the imaginary line that divides the Earth into the eastern hemisphere and western hemisphere?", "prime meridian", "prime meridian" }, {"What is the capital of Canada?", "ottawa", "toronto"} }, // Grade 3 p1
+                { { "Which of the following is not a Prairie Province: British Columbia, Alberta, Saskatchewan, and Manitoba", "british columbia", "british columbia" }, { "How many provinces and territories does Canada have?", "13", "13" }, { "What is the last name of the first prime minister of Canada?", "macdonald", "mcdonald" } }, // Grade 3 p2
                 { { "g4qp1", "g4ap1", "g4cp1" }, { "g4q2p1", "g4a2p1", "g4c2p1" } }, // Grade 4 p1
                 { { "g4qp2", "g4ap2", "g4cp2" }, { "g4q2p2", "g4a2p2", "g4c2p2" } }, // Grade 4 p2
                 { { "g5qp1", "g5ap1", "g5ap1" }, { "g5q2p1", "g5a2p1", "g5a2p1" } }, // Grade 5 p1
