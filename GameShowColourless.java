@@ -116,7 +116,8 @@ public class GameShow {
         // Display instructions
         clearScreen();
         printHeader("INSTRUCTIONS");
-        System.out.println("Welcome to the game - Are You Smarter Than A 5th Grader!!!\n\nThere are a total of 10 + 1 final challenging questions for you to answer.\nAs you progress, the money ladder increases - you win more money.\nOf the first 10 questions, there are 2 from each grade level (grades 1 to 5).\nThese will be prompted to you based on the grade level order.\n\n\nAt any point in the game, you may choose to drop out of school and keep your earnings: enter \"drop out\" to do so.\n\nIf you get the question correct, you will advance onto the next question.\n\nIf you get the question incorrect, depending on the question number, you will\n\t- lose all of your earnings (if you did not get past question 5)\n\t- leave with $25,000 (if you got to question 5)\n\n\nLifeline System: these can only be used in the intial 10 questions - you must complete the final question yourself.\n\n1. At any point in the game, you can peek at your classmate's answer by entering \"peek\".\nYou will be shown your classmate's answer for a brief moment before being prompted for your own answer.\nFor grade 1, 2, and 3 level questions, there is a 2/3 chance your classmate is correct.\nFor grade 4 and 5 level questions, there is a 1/3 chance your classmate is correct.\n\n2. At any point in the game, you can copy at your classmate's answer by entering \"copy\".\nYou will be forced to use your classmate's answer, regardless of whether it is correct or not.\nThe probabilities of correctness are identical to those of the \"peek\" cheat.\n\n3. If you get a question incorrect, the \"save\" lifeline will be automatically used.\nYour classmate's answer is automatically deployed.\nThe probabilities of correctness are identical to both of the above cheats.\n\n\nThroughout the game, if you wish to return to the main menu, enter \"0\".\n\nGood luck and have fun!\n");
+        System.out.println(
+                "Welcome to the game - Are You Smarter Than A 5th Grader!!!\n\nThere are a total of 10 + 1 final challenging questions for you to answer.\nAs you progress, the money ladder increases - you win more money.\nOf the first 10 questions, there are 2 from each grade level (grades 1 to 5).\nThese will be prompted to you based on the grade level order.\n\n\nAt any point in the game, you may choose to drop out of school and keep your earnings: enter \"drop out\" to do so.\n\nIf you get the question correct, you will advance onto the next question.\n\nIf you get the question incorrect, depending on the question number, you will\n\t- lose all of your earnings (if you did not get past question 5)\n\t- leave with $25,000 (if you got to question 5)\n\n\nLifeline System: these can only be used in the intial 10 questions - you must complete the final question yourself.\n\n1. At any point in the game, you can peek at your classmate's answer by entering \"peek\".\nYou will be shown your classmate's answer for a brief moment before being prompted for your own answer.\nFor grade 1, 2, and 3 level questions, there is a 2/3 chance your classmate is correct.\nFor grade 4 and 5 level questions, there is a 1/3 chance your classmate is correct.\n\n2. At any point in the game, you can copy at your classmate's answer by entering \"copy\".\nYou will be forced to use your classmate's answer, regardless of whether it is correct or not.\nThe probabilities of correctness are identical to those of the \"peek\" cheat.\n\n3. If you get a question incorrect, the \"save\" lifeline will be automatically used.\nYour classmate's answer is automatically deployed.\nThe probabilities of correctness are identical to both of the above cheats.\n\n\nThroughout the game, if you wish to return to the main menu, enter \"0\".\n\nGood luck and have fun!\n");
         // Return to menu message
         System.out.println("\nTo return to the main menu, enter 0.\n");
 
@@ -129,7 +130,8 @@ public class GameShow {
         }
     }
 
-    public static void game() throws LineUnavailableException, IOException, UnsupportedAudioFileException, InterruptedException {
+    public static void game()
+            throws LineUnavailableException, IOException, UnsupportedAudioFileException, InterruptedException {
         // VARIABLE DECLARATION (AND INITIALIZATION OF SOME VARIABLES)
 
         // Game related values
@@ -162,7 +164,7 @@ public class GameShow {
                 },
                 { // grade 3 part 1
                         { "What is the antonym of antonym?", "synonym", "synonym" },
-                        { "The equator is an imaginary line that divides the Earth into a northern hemisphere and a southern hemisphere. What is the imaginary line that divides the Earth into the eastern hemisphere and western hemisphere?",
+                        { "The equator is an imaginary line that divides the Earth into a northern hemisphere and a southern hemisphere.\nWhat is the imaginary line that divides the Earth into the eastern hemisphere and western hemisphere?",
                                 "prime meridian", "prime meridian" },
                         { "What is the capital of Canada?", "ottawa", "toronto" }
                 },
@@ -182,7 +184,7 @@ public class GameShow {
                         { "What is a group of dolphins called?", "pod", "dolfanes" },
                         { "The mother pig is known as a sow. Similarly, the father pig is known as a ____.", "boar",
                                 "bear" },
-                        { "What is the french verb for \"to walk\"?", "marcher", "marcher"}
+                        { "What is the french verb for \"to walk\"?", "marcher", "marcher" }
                 },
                 { // grade 5 part 1
                         { "The states of matter are: solid, liquid, and ___.", "gas", "gas" },
@@ -190,14 +192,17 @@ public class GameShow {
                         { "What is the capital of Saskatchewan", "regina", "saskatoon" }
                 },
                 { // grade 5 part 2
-                        { "The body system, _____ system, protects your body's cells from invaders.", "immune", "immune" },
+                        { "The body system, _____ system, protects your body's cells from invaders.", "immune",
+                                "immune" },
                         { "What is the head of government of Canada called?", "prime minister", "president" },
-                        { "Weather refers to the short-term conditions, whereas _____ refers to the average weather conditions over a long period of time.",
+                        { "Weather refers to the short-term conditions, whereas _____ refers to the average weather conditions \nover a long period of time.",
                                 "climate", "long-term weather" },
                 },
                 { // final question
-                        { "What does LASER stand for?", "light amplification by stimulated emission of radiation", "no cheats!" },
-                        { "What are the first 10 (9 + initial 1st digit that is 3) digits of the mathematical constant pi?", "3.141592653", "no cheats!" },
+                        { "What does LASER stand for?", "light amplification by stimulated emission of radiation",
+                                "no cheats!" },
+                        { "What are the first 10 (9 + initial 1st digit that is 3) digits of the mathematical constant pi?",
+                                "3.141592653", "no cheats!" },
                         { "What is always coming but never arrives?", "tomorrow", "no cheats!" }
                 }
         };
@@ -267,7 +272,8 @@ public class GameShow {
                     if (!peek) {
                         // user peeks at classmate
                         System.out.println(
-                                "\nYou peek at your classmate's answer: " + classmateAnswer + ". Your turn to answer!\n");
+                                "\nYou peek at your classmate's answer: " + classmateAnswer
+                                        + ". Your turn to answer!\n");
                         peek = true;
                     } else {
                         // user already used peek lifeline
@@ -297,7 +303,9 @@ public class GameShow {
                         getInput = false;
                     } else {
                         // user already used save lifeline
-                        System.out.println("\nIncorrect! Unfortunately, you already used your save cheat. The correct answer was " + a + ".");
+                        System.out.println(
+                                "\nIncorrect! Unfortunately, you already used your save cheat. The correct answer was "
+                                        + a + ".");
                         playSound("incorrect.wav");
                         alive = false;
                     }
@@ -363,7 +371,8 @@ public class GameShow {
                         printHeader("AND WE HAVE A WINNER!!! You win the grand prize of $1,000,000 to take home!");
                     } else {
                         // user is incorrect
-                        printHeader("\nUnlucky. The correct answer was " + a + ". But you still win $25,000 for getting this far!");
+                        printHeader("\nUnlucky. The correct answer was " + a
+                                + ". But you still win $25,000 for getting this far!");
                     }
                     wait(4000);
                 } catch (Exception e) {
@@ -417,7 +426,8 @@ public class GameShow {
         }
     }
 
-    public static void main(String[] args) throws LineUnavailableException, IOException, UnsupportedAudioFileException, InterruptedException {
+    public static void main(String[] args)
+            throws LineUnavailableException, IOException, UnsupportedAudioFileException, InterruptedException {
         // Loop to keep main menu, instructions, or game running
         while (true) {
             if (instructionsScreen)

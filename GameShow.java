@@ -161,7 +161,7 @@ public class GameShow {
                 },
                 { // grade 3 part 1
                         { "What is the antonym of antonym?", "synonym", "synonym" },
-                        { "The equator is an imaginary line that divides the Earth into a northern hemisphere and a southern hemisphere. What is the imaginary line that divides the Earth into the eastern hemisphere and western hemisphere?",
+                        { "The equator is an imaginary line that divides the Earth into a northern hemisphere and a southern hemisphere.\nWhat is the imaginary line that divides the Earth into the eastern hemisphere and western hemisphere?",
                                 "prime meridian", "prime meridian" },
                         { "What is the capital of Canada?", "ottawa", "toronto" }
                 },
@@ -191,7 +191,7 @@ public class GameShow {
                 { // grade 5 part 2
                         { "The body system, _____ system, protects your body's cells from invaders.", "immune", "immune" },
                         { "What is the head of government of Canada called?", "prime minister", "president" },
-                        { "Weather refers to the short-term conditions, whereas _____ refers to the average weather conditions over a long period of time.",
+                        { "Weather refers to the short-term conditions, whereas _____ refers to the average weather conditions \nover a long period of time.",
                                 "climate", "long-term weather" },
                 },
                 { // final question
