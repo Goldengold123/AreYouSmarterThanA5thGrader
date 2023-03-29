@@ -32,26 +32,36 @@ public class title {
         int lines = title.length;
 
         System.out.println("\n".repeat(50));
-        for (int i = 0; i < lines; i++)
+        for (int i = 0; i < lines; i++) {
             System.out.println(title[i]);
+            Thread.sleep(25);
+        }
         Thread.sleep(500);
 
-        for (int j = 0; j < 100; j++) {
+        for (int j = 0; j < 5; j++) {
             System.out.println("\n".repeat(50));
             for (int i = 0; i < lines; i += 2) {
                 System.out.println(title[i]);
                 System.out.println();
             }
-            Thread.sleep(5);
+            Thread.sleep(50);
 
             System.out.println("\n".repeat(50));
             for (int i = 1; i < lines; i += 2) {
                 System.out.println();
                 System.out.println(title[i]);
             }
-            Thread.sleep(5);
+            Thread.sleep(50);
         }
 
+        for (int j = 0; j < 10; j++) {
+            System.out.println("\n".repeat(50));
+            for (int i = 0; i < lines; i++)
+                System.out.println(title[i]);
+            Thread.sleep(100-9*j);
+            System.out.println("\n".repeat(50));
+            Thread.sleep(100 - 9 * j);
+        }
         System.out.println("\n".repeat(50));
         for (int i = 0; i < lines; i++)
             System.out.println(title[i]);

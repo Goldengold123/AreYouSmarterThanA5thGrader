@@ -9,6 +9,6 @@
 
 public class test {
     public static void main(String[] args) {
-        //System.out.println( ansi().eraseScreen().fg(RED).a("Hello").fg(GREEN).a(" World").reset() );
+        
     }
 }
